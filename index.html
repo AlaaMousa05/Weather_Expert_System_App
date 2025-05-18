@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+   
+
+</head>
+
+  
+
+<body>
+
+  <h2>Weather Expert System</h2>
+  <div class="container">
+<div class="form-container">
+  <form id="weatherForm">
+    <div class="section">
+      <label for="today">What's the weather like today?</label>
+      <select id="today" name="today" required>
+        <option value="">Select</option>
+        <option value="rain">Rain</option>
+        <option value="dry">Dry</option>
+      </select>
+
+      <label>Confidence in your answer:</label>
+      <input type="range" id="confToday" min="0" max="1" step="0.01" value="1">
+      <div class="slider-value">Value: <span id="valToday">1</span></div>
+    </div>
+
+    <div class="section" id="rainOptions" style="display: none;">
+      <label for="rainfall">Rainfall level:</label>
+      <select id="rainfall" name="rainfall">
+        <option value=""> Select </option>
+        <option value="low">Low</option>
+        <option value="high">High</option>
+      </select>
+
+      <label>Confidence:</label>
+      <input type="range" id="confRainfall" min="-1" max="1" step="0.01" value="0">
+      <div class="slider-value">Value: <span id="valRainfall">0</span></div>
+    </div>
+
+    <div class="section" id="tempSection" style="display: none;">
+      <label for="temperature">Temperature:</label>
+      <select id="temperature" name="temperature">
+        <option value=""> Select </option>
+        <option value="cold">Cold</option>
+        <option value="warm">Warm</option>
+      </select>
+
+      <label>Confidence:</label>
+      <input type="range" id="confTemp" min="-1" max="1" step="0.01" value="0">
+      <div class="slider-value">Value: <span id="valTemp">0</span></div>
+    </div>
+
+    <div class="section" id="skySection" style="display: none;">
+      <label for="sky">Sky condition:</label>
+      <select id="sky" name="sky">
+        <option value=""> Select </option>
+        <option value="overcast">Overcast</option>
+        <option value="clear">Clear</option>
+      </select>
+
+      <label>Confidence:</label>
+      <input type="range" id="confSky" min="-1" max="1" step="0.01" value="0">
+      <div class="slider-value">Value: <span id="valSky">0</span></div>
+    </div>
+
+    <button type="submit" id="submitBtn">Predict Tomorrow's Weather</button>
+  </form>
+
+  
+</div>
+<div class="image-container">
+   <canvas id="weatherChart"  class="weather-image"></canvas>
+   <div id="result">
+    <h3>Prediction:</h3>
+    <p id="predictionText">Tomorrow's weather will be ...</p>
+    <p><strong>Confidence:</strong> <span id="predictionCF">0.00</span></p>
+  </div>
+
+</div>
+  </div>
+</body>
+<script src="js/roule.js"></script>
+<script src="js/main.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/chart.js"></script>
+
+</html>
